@@ -2,12 +2,15 @@ import React, { PropsWithChildren } from "react";
 import SolanaProvider from "./SolanaProvider";
 import AppThemeProvider from "./AppThemeProvider";
 import { Toaster } from "../ui/sonner";
+import HoneycombProtocolProvider from "./HoneycombProtocolProvider";
 
 export const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <SolanaProvider>
-      <Toaster richColors position="bottom-right" />
-      <AppThemeProvider>{children}</AppThemeProvider>
+      <HoneycombProtocolProvider>
+        <Toaster richColors position="bottom-right" />
+        <AppThemeProvider>{children}</AppThemeProvider>
+      </HoneycombProtocolProvider>
     </SolanaProvider>
   );
 };

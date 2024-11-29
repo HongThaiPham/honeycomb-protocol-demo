@@ -9,9 +9,10 @@ import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import { clusterApiUrl } from "@solana/web3.js";
 
 const SolanaProvider: React.FC<PropsWithChildren> = ({ children }) => {
-  const network = WalletAdapterNetwork.Devnet;
+  // const network = clusterApiUrl(WalletAdapterNetwork.Devnet);
+  const network = "https://rpc.test.honeycombprotocol.com";
   const wallets = useMemo(() => [], []);
-  const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+  const endpoint = useMemo(() => network, [network]);
   return (
     <ConnectionProvider endpoint={endpoint}>
       <WalletProvider wallets={wallets} autoConnect>
