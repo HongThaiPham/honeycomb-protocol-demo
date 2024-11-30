@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { AppProvider } from "@/components/providers/AppProvider";
 import Navbar from "@/components/commons/Navbar";
+import TransactionLogs from "@/components/honeycomb/TransactionLogs";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -31,7 +32,10 @@ export default function RootLayout({
         <AppProvider>
           <main className="relative flex min-h-screen flex-col">
             <Navbar />
-            <div className="flex-1">{children}</div>
+            <div className="grid grid-cols-3">
+              <div className="col-span-2">{children}</div>
+              <TransactionLogs />
+            </div>
           </main>
         </AppProvider>
       </body>

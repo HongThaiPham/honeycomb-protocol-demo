@@ -44,6 +44,13 @@ const CreateProjectButton = () => {
               address: projectAddress,
               tx: response.responses[0].signature,
             });
+            await db.logs.add({
+              address: projectAddress,
+              tx: response.responses[0].signature,
+              title: "CreateProject",
+              authority: wallet.publicKey.toBase58()!,
+              projectAddress,
+            });
           }
         } catch (error) {
           console.error(error);

@@ -8,7 +8,7 @@ export const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <SolanaProvider>
       <HoneycombProtocolProvider>
-        <Toaster richColors position="bottom-right" />
+        <Toaster richColors position="top-right" />
         <AppThemeProvider>{children}</AppThemeProvider>
       </HoneycombProtocolProvider>
     </SolanaProvider>
